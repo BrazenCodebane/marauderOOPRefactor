@@ -1,0 +1,11 @@
+[
+    {
+        "name": "ESP32",
+        "hidden": false,
+        "generator": "Ninja",
+        "toolchainFile": "${env:IDF_PATH}/tools/cmake/toolchain-esp32.cmake",
+        "variables": {
+            "CMAKE_BUILD_TYPE": "Debug"
+        }
+    }
+]

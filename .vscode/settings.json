@@ -1,0 +1,14 @@
+{
+    "cmake.configureOnOpen": true,
+    "cmake.generator": "Ninja",
+    "cmake.buildDirectory": "${workspaceFolder}/build",
+    "cmake.sourceDirectory": "${workspaceFolder}",
+    "C_Cpp.default.intelliSenseMode": "gcc-x64",
+    "C_Cpp.default.compilerPath": "C:/MinGW/bin/gcc.exe",
+    "C_Cpp.default.includePath": [
+        "${workspaceFolder}/**",
+        "${env:IDF_PATH}/components/**"
+
+    ],
+    "C_Cpp.errorSquiggles": "enabled"
+}
