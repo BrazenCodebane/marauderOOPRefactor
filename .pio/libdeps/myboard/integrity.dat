@@ -1,0 +1,27 @@
+Adafruit ILI9341
+MicroNMEA
+ArduinoJson
+TFT_eSPI
+Adafruit GRF Library
+AsyncTCP
+NTPClient
+ILI9341_t3
+Adafruit STMPE610
+SwitchLib
+JPEGDecoder
+LittleFS_esp32
+NimBLE-Arduino
+LittleFS_Mbed_RP2040
+Adafruit BusIO
+Adafruit TSC2007
+ThingPulse_XPT2046_touch
+Adafruit NeoPixel
+ESP32Time
+EspSoftwareSerial
+Adafruit Touchscreen
+Adafruit SH110X
+ESPAsyncTCP
+LinkedList
+lv_arduino
+ESPAsyncWebServer
+LovyanGFX
