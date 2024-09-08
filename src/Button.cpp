@@ -61,3 +61,16 @@ void Button::resetButton() {
     tft->fillCircle(x, y, radius, buttonColor); // Reset button color
     drawButton(); // Redraw icon and text after reset
 }
+
+
+void drawTextTable1() {
+    const int rows = 7; // Number of rows in the grid
+    const int cols = 3; // Number of columns in the grid
+    const int buttonRadius = 20; // Radius of each button
+    const int buttonSpacing = 10; // Spacing between buttons
+    const uint8_t (*icons)[5][5] = nullptr; // No icons for this example
+    const char **labels = text_table1; // Use the text_table1 array for labels
+
+    // Draw the button grid
+    drawButtonGrid(rows, cols, buttonRadius, buttonSpacing, icons, labels);
+}

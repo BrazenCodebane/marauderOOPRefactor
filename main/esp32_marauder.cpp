@@ -484,4 +484,16 @@ void loop()
     //cli_obj.main(currentTime);
     delay(1);
   }*/
+ #ifdef HAS_TOUCHSCREEN
+ 
+
+
+
+
+
+
+ #endif
+
+
+
 }

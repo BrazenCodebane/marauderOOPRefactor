@@ -2,7 +2,7 @@
 #define BUTTON_H
 
 #include <TFT_eSPI.h> // Include the TFT library
-
+#include "lang_var.h"
 // Define button grid properties
 #define BUTTON_RADIUS 30        // Radius of each circular button
 #define BUTTON_SPACING 20       // Space between the buttons
