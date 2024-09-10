@@ -1,24 +1,18 @@
-#ifndef MARAUDER_M5STICKC_H
-#define MARAUDER_M5STICKC_H
+ #define HARDWARE_NAME "CYD"
 
-    #define HARDWARE_NAME "M5Stick-C Plus"
+
+                //TODO: finish config for CYD variant file
+
 
     #define HAS_BATTERY
     #define HAS_BT
-    #define HAS_BUTTONS
     #define HAS_PWR_MGMT
-    #define HAS_SCREEN
+    #define HAS_TOUCHSCREEN
     #define HAS_SD
     #define USE_SD
-    #define HAS_TEMP_SENSOR
-    #define HAS_GPS
+   
 
-    #define L_BTN -1
-    #define C_BTN 37
-    #define U_BTN -1
-    #define R_BTN -1
-    #define D_BTN 39
-
+   
     #define SCREEN_CHAR_WIDTH 40
     //#define TFT_MISO 19
     #define TFT_MOSI 15
@@ -85,47 +79,3 @@
     #define STATUSBAR_COLOR 0x4A49
 
     #define KIT_LED_BUILTIN 4
-
-#endif
-
-
-
-
- // TODO: CONFIRM all io
-
-#ifndef M5StickC_h
-#define M5StickC_h
-
-#define HARDWARE_NAME "M5Stick-C Plus"
-#define SCREEN_CHAR_WIDTH 40
-#define TFT_MISO 19
-#define TFT_MOSI 23
-#define TFT_SCLK 18
-#define TFT_CS 27
-#define TFT_DC 26
-#define TFT_RST 5
-#define TFT_BL 32
-#define TOUCH_CS 21
-#define SD_CS 4
-
-#define BANNER_TIME 50
-#define COMMAND_PREFIX "!"
-#define KEY_X (TFT_WIDTH/2)
-#define KEY_Y (TFT_HEIGHT/5)
-#define KEY_W TFT_HEIGHT
-#define KEY_H (TFT_HEIGHT/17)
-#define KEY_SPACING_X 0
-#define KEY_SPACING_Y 1
-#define KEY_TEXTSIZE 1
-#define ICON_W 22
-#define ICON_H 22
-#define BUTTON_PADDING 60
-
-#define MEM_LOWER_LIM 20000
-#define MAX_HTML_SIZE 11400
-#define GPS_SERIAL_INDEX 1
-#define GPS_TX 33
-#define GPS_RX 32
-#define mac_history_len 512
-
-#endif // M5StickC_h
