@@ -41,7 +41,8 @@ class Display
 {
   private:
     bool SwitchOn = false;
-    
+    bool modeSelected = false;
+    int selectedMode = 0;
     bool run_setup = true;
     
     // For the byte we read from the serial port
@@ -124,6 +125,7 @@ class Display
     void touchToExit();
     void twoPartDisplay(String center_text);
     void updateBanner(String msg);
+    void drawGraphicalMenu();
 };
 #endif
 #endif

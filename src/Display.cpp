@@ -1,11 +1,16 @@
 #include "Display.h"
 #include "lang_var.h"
+#include <Extensions/Touch.h>
 
 #ifdef HAS_SCREEN
 
 Display::Display()
 {
 }
+
+
+ 
+
 
 // Function to prepare the display and the menus
 void Display::RunSetup()
@@ -804,6 +809,7 @@ void Display::buildBanner(String msg, int xpos)
   */
 }
 
+
 void Display::main(uint8_t scan_mode)
 {  
   if ((scan_mode == LV_JOIN_WIFI) ||
@@ -812,5 +818,19 @@ void Display::main(uint8_t scan_mode)
   return;
 }
 // End SPIFFS_functions
+
+#endif
+
+
+
+#ifdef HAS_TOUCHSCREEN
+void Display::drawGraphicalMenu() {
+  clearScreen();
+  tft.setTextColor(TFT_CYAN, TFT_BLACK);
+  tft.println("Select Mode:");
+  //TODO:
+}
+
+
 
 #endif

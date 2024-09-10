@@ -2,6 +2,7 @@
 
   #define configs_h
 
+  #include "marauder-M5StickC.h"
   #define POLISH_POTATO // nice joke average virginian
 
   //Indicates that it must redirect the stream with the captured packets to serial (1)

@@ -375,6 +375,15 @@ void setup()
   //Serial.println(F("       By: justcallmekoko\n"));
   //Serial.println(F("--------------------------------\n\n"));
   
+
+    #ifdef HAS_TOUCHSCREEN
+    display_obj.clearScreen();
+    display_obj.tft.setTextColor(TFT_CYAN, TFT_BLACK);
+    display_obj.tft.println("Select Mode:");
+    display_obj.tft.println("1. CLI Mode");
+    display_obj.tft.println("2. Graphical Mode");
+  #endif
+
   Serial.println(F("CLI Ready"));
   cli_obj.RunSetup();
 }
@@ -487,7 +496,29 @@ void loop()
  #ifdef HAS_TOUCHSCREEN
  
 
+//TODO:
 
+    if (display_obj.modeSelected == false) {
+      if (c_btn.justPressed()) {
+        display_obj.modeSelected = true;
+        display_obj.selectedMode = 1; // default to CLI mode
+      } else if (d_btn.justPressed()) {
+        display_obj.modeSelected = true;
+        display_obj.selectedMode = 2; // default to graphical mode
+      }
+    }
+  #endif
+
+  if (display_obj.modeSelected == true) {
+    if (display_obj.selectedMode == 1) {
+      // run in CLI mode
+      cli_obj.main(currentTime);
+    } else if (display_obj.selectedMode == 2) {
+      // run in graphical mode
+      display_obj.main(wifi_scan_obj.currentScanMode);
+    }
+  }
+}
 
 
 
