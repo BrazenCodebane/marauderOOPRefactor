@@ -1,51 +1,64 @@
-class ButtonUI {
-public:
-    ButtonUI(Button* button, int x, int y, int width, int height)
-        : button_(button), x_(x), y_(y), width_(width), height_(height), isPressed_(false) {}
+#include "ButtonUI.h"
+#include <algorithm> // For std::find
 
-    void draw() {
-        button_->drawButton();
-    }
+ButtonUI::ButtonUI(TFT_eSPI *display) : tft(display), buttons(nullptr), buttonCount(0), maxButtons(0) {}
 
-    void handleEvent(Event event) {
-        if (event.type == TOUCH_EVENT) {
-            int touchX = event.touchX;
-            int touchY = event.touchY;
-            if (button_->isPressed(touchX, touchY)) {
-                handlePress();
-            }
+ButtonUI::~ButtonUI() {
+    delete[] buttons;
+}
+
+void ButtonUI::drawButton() {
+    if (buttons) {
+        for (int i = 0; i < buttonCount; ++i) {
+            buttons[i]->drawButton();
         }
     }
+}
 
-    void update() {
-        if (isPressed_) {
-            button_->handlePress();
-        } else {
-            button_->resetButton();
+void ButtonUI::handleEvent(const Event &event) {
+    if (buttons) {
+        for (int i = 0; i < buttonCount; ++i) {
+            buttons[i]->handlePress();
         }
     }
+}
 
-    void addButton(Button* button, int x, int y, int width, int height) {
-        // Add button to UI
+void ButtonUI::update() {
+    if (buttons) {
+        for (int i = 0; i < buttonCount; ++i) {
+            buttons[i]->resetButton();
+        }
     }
+}
 
-    void removeButton(Button* button) {
-        // Remove button from UI
+void ButtonUI::addButton(Button* button) {
+    if (buttonCount >= maxButtons) {
+        resizeButtonArray(maxButtons == 0 ? 1 : maxButtons * 2);
     }
+    buttons[buttonCount++] = button;
+}
 
-    void drawAllButtons() {
-        // Draw all buttons in UI
+void ButtonUI::removeButton(Button* button) {
+    auto it = std::find(buttons, buttons + buttonCount, button);
+    if (it != buttons + buttonCount) {
+        delete *it;
+        std::move(it + 1, buttons + buttonCount, it);
+        --buttonCount;
     }
+}
 
-    void handleEventForAllButtons(Event event) {
-        // Handle events for all buttons in UI
-    }
+void ButtonUI::drawAllButtons() {
+    drawButton();
+}
 
-private:
-    Button* button_;
-    int x_;
-    int y_;
-    int width_;
-    int height_;
-    bool isPressed_;
-};
+void ButtonUI::handleEventForAllButtons(const Event &event) {
+    handleEvent(event);
+}
+
+void ButtonUI::resizeButtonArray(int newSize) {
+    Button** newArray = new Button*[newSize];
+    std::move(buttons, buttons + buttonCount, newArray);
+    delete[] buttons;
+    buttons = newArray;
+    maxButtons = newSize;
+}

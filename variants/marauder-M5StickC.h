@@ -1,6 +1,6 @@
 #ifndef MARAUDER_M5STICKC_H
 #define MARAUDER_M5STICKC_H
-
+    
     #define HARDWARE_NAME "M5Stick-C Plus"
 
     #define HAS_BATTERY

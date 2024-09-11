@@ -48,6 +48,7 @@ https://www.online-utility.org/image/convert/to/XBM
 #endif
 
 //#include "esp_interface.h"
+//#include <ezButton.h>
 #include "settings.h"
 #include "CommandLine.h"
 #include "lang_var.h"
@@ -376,7 +377,8 @@ void setup()
   //Serial.println(F("--------------------------------\n\n"));
   
 
-    #ifdef HAS_TOUCHSCREEN
+    #if defined( HAS_TOUCHSCREEN) || defined(HAS_SCREEN)
+  
     display_obj.clearScreen();
     display_obj.tft.setTextColor(TFT_CYAN, TFT_BLACK);
     display_obj.tft.println("Select Mode:");
@@ -483,13 +485,13 @@ void loop()
     #ifdef MARAUDER_FLIPPER
       flipper_led.main();
     #elif defined(MARAUDER_V4)
-    flipper_led.main();  
+    flipper_led.main(); #include "CommandLine.h" 
     #elif defined(XIAO_ESP32_S3)
       xiao_led.main();
     #else
       led_obj.main(currentTime);
     #endif
-    
+    #include "CommandLine.h"
     //cli_obj.main(currentTime);
     delay(1);
   }*/
@@ -507,7 +509,7 @@ void loop()
         display_obj.selectedMode = 2; // default to graphical mode
       }
     }
-  #endif
+  
 
   if (display_obj.modeSelected == true) {
     if (display_obj.selectedMode == 1) {
@@ -527,4 +529,4 @@ void loop()
 
 
 
-}
+

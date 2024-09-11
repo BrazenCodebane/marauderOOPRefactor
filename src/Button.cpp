@@ -25,25 +25,6 @@ void Button::drawButton() {
     tft->drawCentreString(label, x, y + radius + 10, 2); // Text beneath the button
 }
 
-// Draw a grid of buttons
-void Button::drawButtonGrid(int rows, int cols, int buttonRadius, int buttonSpacing, const uint8_t (*icons)[5][5], const char **labels) {
-    for (int row = 0; row < rows; row++) {
-        for (int col = 0; col < cols; col++) {
-            int xPos = (col * (2 * buttonRadius + buttonSpacing)) + buttonRadius + buttonSpacing;
-            int yPos = (row * (2 * buttonRadius + buttonSpacing)) + buttonRadius + buttonSpacing;
-
-            // Set button position and icon
-            x = xPos;
-            y = yPos;
-            iconBitmap = icons[row * cols + col];
-            label = labels[row * cols + col];
-
-            // Draw each button
-            drawButton();
-        }
-    }
-}
-
 // Check if the button is pressed
 bool Button::isPressed(int touchX, int touchY) {
     int dx = touchX - x;
@@ -60,17 +41,4 @@ void Button::handlePress() {
 void Button::resetButton() {
     tft->fillCircle(x, y, radius, buttonColor); // Reset button color
     drawButton(); // Redraw icon and text after reset
-}
-
-
-void drawTextTable1() {
-    const int rows = 7; // Number of rows in the grid
-    const int cols = 3; // Number of columns in the grid
-    const int buttonRadius = 20; // Radius of each button
-    const int buttonSpacing = 10; // Spacing between buttons
-    const uint8_t (*icons)[5][5] = nullptr; // No icons for this example
-    const char **labels = text_table1; // Use the text_table1 array for labels
-
-    // Draw the button grid
-    drawButtonGrid(rows, cols, buttonRadius, buttonSpacing, icons, labels);
 }
