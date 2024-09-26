@@ -3,29 +3,17 @@
 
 #include "Button.h"
 
-enum EventType {
-    TOUCH_EVENT,
-    // Add other event types if necessary
-};
-
-struct Event {
-    EventType type;
-    int touchX;
-    int touchY;
-};
 
 class ButtonUI {
 public:
     ButtonUI(TFT_eSPI *display);
     ~ButtonUI();
 
-    void drawButton();
-    void handleEvent(const Event &event);
+    void drawAllButtons();
     void update();
     void addButton(Button* button);
     void removeButton(Button* button);
-    void drawAllButtons();
-    void handleEventForAllButtons(const Event &event);
+    
 
 private:
     TFT_eSPI *tft;

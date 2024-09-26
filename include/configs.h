@@ -11,9 +11,9 @@
   //// BOARD TARGETS
   //#define MARAUDER_M5STICKC
   //#define MARAUDER_MINI
-  //#define MARAUDER_V4
-  #define MARAUDER_V6
-  #define MARAUDER_V6_1
+  #define MARAUDER_V4
+  //#define MARAUDER_V6
+  //#define MARAUDER_V6_1
   //#define MARAUDER_KIT
   //#define GENERIC_ESP32
   //#define MARAUDER_FLIPPER
@@ -85,9 +85,7 @@
     #define USE_SD
     #define HAS_TEMP_SENSOR
     #define HAS_GPS
-  #endif
-
-  #ifdef GENERIC_ESP32
+  #endif#include <stdio.h>P32
     //#define FLIPPER_ZERO_HAT
     #define HAS_BATTERY
     #define HAS_BT
@@ -157,7 +155,7 @@
     //#define HAS_GPS
   #endif
   //// END BOARD FEATURES
-
+#include <stdio.h>
   //// FLIPPER ZERO HAT SETTINGS
   #ifdef FLIPPER_ZERO_HAT
 
@@ -619,6 +617,6 @@
 
 
 
-    #endif
+    
   #endif
 #endif

@@ -9,12 +9,10 @@ public:
     Button(TFT_eSPI *display, int xPos, int yPos, int btnRadius, const char *text, const uint8_t icon[5][5], uint16_t color, uint16_t textColor, uint16_t pressedColor);
 
     void drawButton();
-    bool isPressed(int touchX, int touchY);
-    void handlePress();
     void resetButton();
-
-private:
     TFT_eSPI *tft;
+private:
+   
     int x, y, radius;
     const char *label;
     const uint8_t (*iconBitmap)[5];

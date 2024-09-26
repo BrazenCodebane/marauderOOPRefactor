@@ -539,7 +539,7 @@
                 ]
             },
             "defines": [
-                "PLATFORMIO=60115",
+                "PLATFORMIO=60116",
                 "ARDUINO_ESP32_DEV",
                 "DEBUG",
                 "HAVE_CONFIG_H",

@@ -1,29 +1,28 @@
-ESP32Time
-ThingPulse_XPT2046_touch
-ESPAsyncTCP
-Adafruit SH110X
-ezButton
-Adafruit ILI9341
-Adafruit BusIO
-LittleFS_Mbed_RP2040
-SwitchLib
 ArduinoJson
-AsyncTCP
-TFT_eSPI
-NimBLE-Arduino
+ESPAsyncWebServer
+LittleFS_esp32
+ILI9341_t3
+ezButton
 Adafruit TSC2007
-LinkedList
+LovyanGFX
+ESPAsyncTCP
+NimBLE-Arduino
+AsyncTCP
+Adafruit STMPE610
 JPEGDecoder
-lv_arduino
 Adafruit Touchscreen
 Adafruit NeoPixel
-LovyanGFX
-LittleFS_esp32
-Adafruit STMPE610
-ESPAsyncWebServer
-ILI9341_t3
-Switches
-EspSoftwareSerial
-MicroNMEA
-Adafruit GRF Library
+Adafruit ILI9341
+Adafruit SH110X
+lv_arduino
+ESP32Time
+ThingPulse_XPT2046_touch
+SwitchLib
 NTPClient
+EspSoftwareSerial
+LittleFS_Mbed_RP2040
+MicroNMEA
+Adafruit BusIO
+TFT_eSPI
+Adafruit GRF Library
+LinkedList

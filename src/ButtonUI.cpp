@@ -7,7 +7,7 @@ ButtonUI::~ButtonUI() {
     delete[] buttons;
 }
 
-void ButtonUI::drawButton() {
+void ButtonUI::drawAllButtons() {
     if (buttons) {
         for (int i = 0; i < buttonCount; ++i) {
             buttons[i]->drawButton();
@@ -15,13 +15,6 @@ void ButtonUI::drawButton() {
     }
 }
 
-void ButtonUI::handleEvent(const Event &event) {
-    if (buttons) {
-        for (int i = 0; i < buttonCount; ++i) {
-            buttons[i]->handlePress();
-        }
-    }
-}
 
 void ButtonUI::update() {
     if (buttons) {
@@ -47,13 +40,8 @@ void ButtonUI::removeButton(Button* button) {
     }
 }
 
-void ButtonUI::drawAllButtons() {
-    drawButton();
-}
 
-void ButtonUI::handleEventForAllButtons(const Event &event) {
-    handleEvent(event);
-}
+
 
 void ButtonUI::resizeButtonArray(int newSize) {
     Button** newArray = new Button*[newSize];
