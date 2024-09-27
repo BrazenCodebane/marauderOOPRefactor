@@ -2,14 +2,18 @@
 #define BUTTONLOCATION_H
 
 #include "Coord.h"
-struct ButtonLocation
+#include  "Button.h"
+class ButtonLocation : Coord
 {
-    /* data */
+    private:
+        Button button;
+    public:
 
-    Coord origin;
-    int width;
-    int height; 
-    int padding; 
+        ButtonLocation::ButtonLocation();
+
+        ButtonLocation::ButtonLocation(Button button);
+    // HERE
+
 };
 
 

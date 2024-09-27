@@ -1,7 +1,10 @@
 #ifndef COORD_H
 #define COORD_H
-struct Coord
-{
+class Coord
+{public:
+    Coord::Coord();
+    Coord::Coord(int x,int y);
+
     int x;
     int y;
 };
@@ -9,4 +12,4 @@ struct Coord
 
 
 
-#endif  // COORD_H
+#endif  //COORD_H
