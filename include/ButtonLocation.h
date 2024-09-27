@@ -3,16 +3,20 @@
 
 #include "Coord.h"
 #include  "Button.h"
+
+
+
+
 class ButtonLocation : Coord
 {
-    private:
-        Button button;
-    public:
+  public:
+        Coord coord;
+    
 
         ButtonLocation::ButtonLocation();
 
         ButtonLocation::ButtonLocation(Button button);
-    // HERE
+    
 
 };
 

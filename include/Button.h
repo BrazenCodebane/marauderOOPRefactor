@@ -6,8 +6,10 @@
 
 class Button {
 public:
-    Button::Button(); // This needs to create default values!!KK
-    Button::Button(TFT_eSPI *display, int xPos, int yPos, int btnRadius, const char *text, const uint8_t icon[5][5], uint16_t color, uint16_t textColor, uint16_t pressedColor);
+    Button::Button(); 
+    Button::Button(TFT_eSPI *display, int xPos, int yPos, int btnRadius,
+     const char *text, const uint8_t icon[5][5], uint16_t color, uint16_t textColor,
+      uint16_t pressedColor);
     int x, y, radius;
     void drawButton();
     void resetButton();

@@ -3,14 +3,15 @@
 #include "Event.h"
 #include "Button.h"
 #include "Coord.h"
+#include "ButtonLocation.h"
 class Touch{
 public:
     Coord coordinates;
-    Touch::Touch(Coord);
+    Touch::Touch(Coord coords,ButtonLocation activeButtons[]);
     void Touch::handlePress();
-    bool Touch::isPressed(Coord touch, Coord p1, Coord p2, int padding=0); 
+    bool Touch::isPressed(Coord touch, ButtonLocation activeButtons[], int padding = 0); 
     void Touch::handleEvent(const Event &event);
-
+    ButtonLocation activeButtons[];
 
 };
 #endif  // TOUCHHANDLER_H
