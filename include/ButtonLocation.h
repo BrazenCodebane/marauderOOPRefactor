@@ -11,12 +11,10 @@ class ButtonLocation : Coord
 {
   public:
         Coord coord;
-    
 
         ButtonLocation::ButtonLocation();
 
         ButtonLocation::ButtonLocation(Button button);
-    
 
 };
 
