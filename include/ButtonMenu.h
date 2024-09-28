@@ -12,24 +12,12 @@
     public:
         ButtonMenu(/* args */);
         ~ButtonMenu();
+
+    
+
+
+
     };
-    
-    ButtonMenu::ButtonMenu(/* args */)
-    {
-    }
-    
-    ButtonMenu::~ButtonMenu()
-    {
-    }
-    
-
-
-
-
-
-
-
-
 
 
 #endif

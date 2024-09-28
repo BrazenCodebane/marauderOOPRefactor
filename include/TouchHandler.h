@@ -7,11 +7,17 @@
 class Touch{
 public:
     Coord coordinates;
-    Touch::Touch(Coord coords,ButtonLocation activeButtons[]);
+    
+    Touch::Touch(Event touch, ButtonLocation activeButtons[]);
     void Touch::handlePress();
-    bool Touch::isPressed(Coord touch, ButtonLocation activeButtons[], int padding = 0); 
-    void Touch::handleEvent(const Event &event);
+    void Touch::isPressed(Event touch, ButtonLocation activeButtons[], int padding = 9); 
+    void Touch::handleTouchEvent(Event event);
     ButtonLocation activeButtons[];
+
+        void Touch::SwipeRightMenu();
+        void Touch::SwipeLeftMenu();
+        void Touch::SwipeDownMenu();
+        void Touch::SwipeUpMenu();
 
 };
 #endif  // TOUCHHANDLER_H
