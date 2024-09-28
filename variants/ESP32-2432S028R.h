@@ -1,3 +1,6 @@
+ #ifndef ESP32_24325028R_H
+ #define ESP32_24325028R_H
+
  #define HARDWARE_NAME "CYD"
 
 
@@ -55,7 +58,7 @@
     //#define MENU_FONT &FreeSans9pt7b
     //#define MENU_FONT &FreeSansBold9pt7b
     #define BUTTON_SCREEN_LIMIT 6
-    #define BUTTON_ARRAY_LEN 13
+    #define BUTTON_ARRAY_LEN 13 
     #define STATUS_BAR_WIDTH (TFT_HEIGHT/16)
     #define LVGL_TICK_PERIOD 6
 
@@ -79,3 +82,4 @@
     #define STATUSBAR_COLOR 0x4A49
 
     #define KIT_LED_BUILTIN 4
+#endif

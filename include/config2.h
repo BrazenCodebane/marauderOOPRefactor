@@ -3,8 +3,31 @@
 
 #include "marauder-M5StickC.h"
 
+
+
+
+ //// BOARD TARGETS
+  #define CYD
+  //#define MARAUDER_M5STICKC
+  //#define MARAUDER_MINI
+  //#define MARAUDER_V4
+  //#define MARAUDER_V6
+  //#define MARAUDER_V6_1
+  //#define MARAUDER_KIT
+  //#define GENERIC_ESP32
+  //#define MARAUDER_FLIPPER
+  //#define ESP32_LDDB
+  //#define MARAUDER_DEV_BOARD_PRO
+  //#define XIAO_ESP32_S3
+  //// END BOARD TARGETS
+
+
+
+
 #ifdef MARAUDER_M5STICKC
 #include "M5StickC.h"
+#elif defined(CYD)
+    #include "ESP32-2432S028R.h"
 #elif defined(MARAUDER_MINI)
 #include "MarauderMini.h"
 #elif defined(MARAUDER_V4)

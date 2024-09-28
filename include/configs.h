@@ -1,5 +1,5 @@
-#ifndef configs_h
-#define configs_h
+#ifndef configsTwo_h
+#define configsTwo_h
 
   #include "marauder-M5StickC.h"
   #define POLISH_POTATO // nice joke average virginian
@@ -9,9 +9,10 @@
   //#define WRITE_PACKETS_SERIAL
   
   //// BOARD TARGETS
+  #define CYD
   //#define MARAUDER_M5STICKC
   //#define MARAUDER_MINI
-  #define MARAUDER_V4
+  //#define MARAUDER_V4
   //#define MARAUDER_V6
   //#define MARAUDER_V6_1
   //#define MARAUDER_KIT
@@ -47,6 +48,8 @@
     #define HARDWARE_NAME "Flipper Zero Dev Board Pro"
   #elif defined(XIAO_ESP32_S3)
     #define HARDWARE_NAME "XIAO ESP32 S3"
+  #elif defined(CYD)
+    #include "ESP32-2432S028R.h"
   #else
     #define HARDWARE_NAME "ESP32"
   #endif
@@ -85,7 +88,8 @@
     #define USE_SD
     #define HAS_TEMP_SENSOR
     #define HAS_GPS
-  #endif#include <stdio.h>P32
+  #endif
+  #include <stdio.h>P32
     //#define FLIPPER_ZERO_HAT
     #define HAS_BATTERY
     #define HAS_BT
